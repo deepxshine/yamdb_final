@@ -8,7 +8,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.core.mail import send_mail
 from django.contrib.auth.tokens import default_token_generator
 from django_filters.rest_framework import DjangoFilterBackend
-
 from reviews.models import Title, Category, Genre, Review, Comment
 from .serializers import (
     ReadTitleSerializer, WriteTitleSerializer,
