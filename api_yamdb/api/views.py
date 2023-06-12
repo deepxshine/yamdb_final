@@ -1,24 +1,23 @@
-from rest_framework import viewsets, permissions, status
-from rest_framework.decorators import action
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.core.mail import send_mail
-from django.contrib.auth.tokens import default_token_generator
-from django_filters.rest_framework import DjangoFilterBackend
-from reviews.models import Title, Category, Genre, Review, Comment
-from .serializers import (
-    ReadTitleSerializer, WriteTitleSerializer,
-    CategorySerializer, GenreSerializer,
-    SignUpSerializer, GetTokenSerializer,
-    ReviewSerializer, CommentSerializer,
-    UsersSerializer
-)
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
-from .permissions import AdminOrReadOnly, IsAdminOrModeratorOrOwner, AdminUser
+
 from .filters import TitleFilter
+from .permissions import AdminOrReadOnly, AdminUser, IsAdminOrModeratorOrOwner
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, GetTokenSerializer,
+                          ReadTitleSerializer, ReviewSerializer,
+                          SignUpSerializer, UsersSerializer,
+                          WriteTitleSerializer)
 from .viewsets import CreateListDestroyViewSet
 
 

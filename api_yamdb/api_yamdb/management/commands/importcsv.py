@@ -1,8 +1,10 @@
+import csv
+import os
+
 from django.core.management.base import BaseCommand
 from reviews import models
+
 from api_yamdb.settings import CSV_PATH
-import os
-import csv
 
 
 class Command(BaseCommand):

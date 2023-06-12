@@ -1,9 +1,10 @@
-import re
 import datetime as dt
-from rest_framework import serializers
-from reviews.models import Title, Category, Genre, Review, Comment
-from django.shortcuts import get_object_or_404
+import re
+
 from django.core.validators import EmailValidator
+from django.shortcuts import get_object_or_404
+from rest_framework import serializers
+from reviews.models import Category, Comment, Genre, Review, Title
 from users.models import User
 
 
