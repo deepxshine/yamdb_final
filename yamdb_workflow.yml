@@ -1,4 +1,4 @@
-name: Yamdb workflow
+name: yamdb workflow
 
 on: [push]
 
@@ -59,6 +59,13 @@ jobs:
           script: |
             sudo docker pull deepxshine/api_yamdb
             sudo docker stop $(sudo docker ps -a -q)
+            touch .env
+            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
+            echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+            echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+            echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker run --rm -d -p 5000:5000 deepxshine/api_yamdb
 
   send_message:
