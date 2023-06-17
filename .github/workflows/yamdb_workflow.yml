@@ -43,7 +43,6 @@ jobs:
         with:
           push: true
           tags: deepxshine/api_yamdb:latest
-          file: api_yamdb/Dockerfile
           context: ./api_yamdb/
 
   deploy:
