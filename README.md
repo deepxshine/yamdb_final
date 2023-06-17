@@ -57,7 +57,7 @@ PASSPHRASE - кодовая фраза для ssh-ключа
 TELEGRAM_TO - id чата в телеграме
 TELEGRAM_TOKEN - токен телеграм бота
 
-### Проект досупен по адресу 
-https://158.160.8.160
+### Проект досупен по адресу
+http://158.160.8.160/admin/login/?next=/admin/
 ### Автор проекта 
 [Алексей Евдокимов](https://github.com/deepxshine)
